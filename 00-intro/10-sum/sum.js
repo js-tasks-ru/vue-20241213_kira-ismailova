@@ -6,5 +6,9 @@
  * @return {number} сумма чисел a и b
  */
 export function sum(a, b) {
-  // Решение
+  let result = +a + +b;
+  if (isNaN(result)) {
+    throw new Error("Both arguments must be numbers.");
+  }
+  return result;
 }
