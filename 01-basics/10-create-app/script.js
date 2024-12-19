@@ -13,7 +13,7 @@ const App = defineComponent({
       
       return date.toLocaleDateString(navigator.language, options);
     }
-
+ 
     const DATE = formattedData();
 
     return {
