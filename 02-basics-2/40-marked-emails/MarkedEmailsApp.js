@@ -35,15 +35,28 @@ export default defineComponent({
   setup() {
     const searchEmail = ref('');
 
-    const markedEmails = computed(() => {
-      return emails.filter(email => {
-        return email.toLowerCase().includes(searchEmail.value.toLowerCase());
-      })
+    const emailObject = computed(() => {
+       return emails.map(email => ({
+        email: email,
+        isMarked: false,
+      }));
     })
 
+    const markedEmails = computed(() => {
+      const { value: search } = searchEmail;
+      const { value: emails } = emailObject;
+      if (!search) {
+        return emails;
+      }
+      return emails.map(emailObj => ({
+        ...emailObj,
+        isMarked: emailObj.email.toLowerCase().includes(search.toLowerCase())
+      }));
+    });
+    
     return {
-      emails,
       searchEmail,
+      emailObject,
       markedEmails,
     }
   },
@@ -55,10 +68,10 @@ export default defineComponent({
       </div>
       <ul aria-label="Emails">
         <li 
-        v-for="email in emails"
-        :class="markedEmails.includes(email) && searchEmail ? 'marked' : ''">
-          {{ email }}
-        </li>
+        v-for="item in markedEmails" 
+        :class="{ marked: item.isMarked }">
+        {{ item.email }}
+      </li>
       </ul>
     </div>
   `,

@@ -56,7 +56,7 @@ export default defineComponent({
         @click="buttonPrev">Предыдущий</button>
 
         <div class="radio-group" role="radiogroup">
-          <div class="radio-group__button" v-for="id in [1, 2, 3, 4, 5]">
+          <div class="radio-group__button" v-for="id in 5">
             <input
               :id="'meetup-id-' + id"
               class="radio-group__input"
