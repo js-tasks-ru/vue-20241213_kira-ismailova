@@ -40,7 +40,7 @@ const props = defineProps({
             <!-- Или при пустой программе - сообщение "Программа пока пуста..." в UiAlert -->
             <UiAlert 
               v-if="!meetup.agenda || !meetup.agenda.length">
-              <slot>Программа пока пуста...</slot>
+              <template #default>Программа пока пуста...</template>
             </UiAlert>
         </div>
         <div class="meetup__aside">

@@ -1,7 +1,7 @@
 import { defineComponent } from 'vue'
 
 export default defineComponent({
-  name: 'UiTitle.js',
+  name: 'UiTitle',
 
   props: {
     text: {
