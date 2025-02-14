@@ -1,26 +1,27 @@
 <script setup lang="ts">
-import type { Slot } from 'vue'
+import type { Slot } from 'vue';
+import { defineProps } from 'vue';
 
-const props = defineProps<{
+defineProps<{
   for?: string
   label?: string
   description?: string
   hint?: string
   showHint?: boolean
   invalid?: boolean
-}>()
+}>();
 
 defineSlots<{
   default?: Slot
   label?: Slot
   description?: Slot
-}>()
+}>();
 </script>
 
 <template>
   <div class="form-group">
     <div class="form-group__label-wrapper">
-      <label :for="props.for" class="form-group__label">
+      <label :for="$props.for" class="form-group__label">
         <slot name="label">{{ label }}</slot>
       </label>
       <div class="form-group__description">
@@ -37,10 +38,6 @@ defineSlots<{
 </template>
 
 <style scoped>
-/* _form-group.css */
-.form-group {
-}
-
 .form-group__label-wrapper {
   margin-block-end: var(--spacing-small);
 }
