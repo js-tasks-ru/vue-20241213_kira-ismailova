@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { MeetupAgendaItemDTO } from '@shgk/vue-course-ui'
-import { computed, defineProps } from 'vue'
+import { computed } from 'vue'
 import { UiIcon } from '@shgk/vue-course-ui'
 
 const props = defineProps<{

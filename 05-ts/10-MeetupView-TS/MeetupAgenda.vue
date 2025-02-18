@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { MeetupAgendaItemDTO } from '@shgk/vue-course-ui'
 import MeetupAgendaItem from './MeetupAgendaItem.vue'
-import { defineProps } from 'vue'
 
 defineProps<{
    agenda: MeetupAgendaItemDTO

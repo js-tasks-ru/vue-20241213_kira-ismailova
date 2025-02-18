@@ -5,7 +5,6 @@ import MeetupAgenda from './MeetupAgenda.vue'
 import MeetupDescription from './MeetupDescription.vue'
 import MeetupCover from './MeetupCover.vue'
 import MeetupInfo from './MeetupInfo.vue'
-import { defineProps } from 'vue'
 
   defineProps<{
     meetup: MeetupDTO
