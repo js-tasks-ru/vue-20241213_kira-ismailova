@@ -2,12 +2,12 @@
 
   defineProps<{
     options: {
-      text: T,
+      text: string,
       value: T,
     }[]
   }>();
 
-  const model = defineModel();
+  const model = defineModel<T>();
 </script>
 
 <template>
